@@ -11,6 +11,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.sdsmdg.tastytoast.TastyToast;
+
 public class MainActivity extends AppCompatActivity {
 
     GridView androidGridView;
@@ -46,7 +48,29 @@ public class MainActivity extends AppCompatActivity {
         androidGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent,
                                     View v, int position, long id) {
-                Toast.makeText(getBaseContext(), "Grid Item " + (position + 1) + " Selected", Toast.LENGTH_LONG).show();
+              //  Toast.makeText(getBaseContext(), "Grid Item " + (position + 1) + " Selected", Toast.LENGTH_LONG).show();
+
+                switch (position){
+                    case 0:
+                        TastyToast.makeText(getApplicationContext(), "Hello World !", TastyToast.LENGTH_LONG, TastyToast.DEFAULT);
+                        break;
+                    case 1:
+                        TastyToast
+                                .makeText(getApplicationContext(), "Hello World !", TastyToast.LENGTH_LONG, TastyToast.INFO);
+                        break;
+                    case 2:
+                        TastyToast.makeText(getApplicationContext(), "Hello World !", TastyToast.LENGTH_LONG, TastyToast.WARNING);
+                        break;
+                    case 3:
+                        TastyToast.makeText(getApplicationContext(), "Hello World !", TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
+                        break;
+                    case 4:
+                        TastyToast.makeText(getApplicationContext(), "Hello World !", TastyToast.LENGTH_LONG, TastyToast. LENGTH_LONG);
+                        break;
+                    case 5:
+                        TastyToast.makeText(getApplicationContext(), "Hello World !", TastyToast.LENGTH_LONG, TastyToast.LENGTH_SHORT);
+                        break;
+                }
             }
         });
 
